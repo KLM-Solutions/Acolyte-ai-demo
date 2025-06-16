@@ -145,8 +145,6 @@ export default function Page() {
           <CardContent className="pt-0">
             <Link
               href={getCategoryUrl(selectedCategories[stack.id] || stack.category[0])}
-              target="_blank"
-              rel="noopener noreferrer"
               onClick={() => handleDemoClick(stack.id)}
             >
               <Button 
@@ -220,8 +218,6 @@ export default function Page() {
               <div className="flex justify-end">
                 <Link
                   href={getCategoryUrl(selectedCategories[stack.id] || stack.category[0])}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={() => handleDemoClick(stack.id)}
                 >
                   <Button 
