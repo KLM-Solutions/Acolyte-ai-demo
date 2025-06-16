@@ -61,11 +61,11 @@ export default function Page() {
   const getCategoryUrl = (category: string) => {
     switch (category) {
       case "Anam":
-        return "https://anam-demo-version-001.vercel.app/session"
+        return "https://anam-demo-version-001.vercel.app/"
       case "D-id":
-        return "https://new-avatar-five.vercel.app/"
+        return "#" // Coming soon
       case "gpt-image-1":
-        return "https://acolyte-image-demo.vercel.app/chat"
+        return "https://acolyte-image-demo.vercel.app/"
       case "eleven labs":
         return "https://acolyte-eleven-labs.vercel.app/chat"
       case "openai":
@@ -77,6 +77,10 @@ export default function Page() {
       default:
         return "#"
     }
+  }
+
+  const isComingSoon = (category: string) => {
+    return category === "flux" || category === "D-id"
   }
 
   const handleCategoryChange = (stackId: string, category: string) => {
@@ -149,9 +153,9 @@ export default function Page() {
                 variant="outline" 
                 className="w-full border-gray-300 hover:bg-gray-50" 
                 size="sm"
-                disabled={selectedCategories[stack.id] === "flux"}
+                disabled={isComingSoon(selectedCategories[stack.id] || stack.category[0])}
               >
-                {selectedCategories[stack.id] === "flux" ? "Coming Soon" : "View Demo"}
+                {isComingSoon(selectedCategories[stack.id] || stack.category[0]) ? "Coming Soon" : "View Demo"}
                 <ExternalLink className="ml-2 h-3 w-3" />
               </Button>
             </Link>
@@ -224,9 +228,9 @@ export default function Page() {
                     variant="outline" 
                     className="border-gray-300 hover:bg-gray-50" 
                     size="sm"
-                    disabled={selectedCategories[stack.id] === "flux"}
+                    disabled={isComingSoon(selectedCategories[stack.id] || stack.category[0])}
                   >
-                    {selectedCategories[stack.id] === "flux" ? "Coming Soon" : "View Demo"}
+                    {isComingSoon(selectedCategories[stack.id] || stack.category[0]) ? "Coming Soon" : "View Demo"}
                     <ExternalLink className="ml-2 h-3 w-3" />
                   </Button>
                 </Link>
