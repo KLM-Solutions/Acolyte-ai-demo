@@ -61,11 +61,11 @@ export default function Page() {
   const getCategoryUrl = (category: string) => {
     switch (category) {
       case "Anam":
-        return "https://anam-demo-version-001.vercel.app/"
+        return "https://anam-demo-version-001.vercel.app/session"
       case "D-id":
         return "#" // Coming soon
       case "gpt-image-1":
-        return "https://acolyte-image-demo.vercel.app/"
+        return "https://acolyte-image-demo.vercel.app/chat"
       case "eleven labs":
         return "https://acolyte-eleven-labs.vercel.app/chat"
       case "openai":
